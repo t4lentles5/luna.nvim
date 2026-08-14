@@ -51,6 +51,7 @@ Theme files for other tools are available in [`extras/`](./extras/):
 - [bat](./extras/bat)
 - [fzf](./extras/fzf)
 - [Ghostty](./extras/ghostty)
+- [Hunk](./extras/hunk)
 - [Herdr](./extras/herdr)
 - [k9s](./extras/k9s)
 - [Kitty](./extras/kitty)
