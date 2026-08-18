@@ -1,63 +1,42 @@
-![banner](./assets/banner.png)
+# Luna (Quickshell Edition) 🌙
 
-# luna.nvim
+This is a specialized fork of the original [luna.nvim](https://github.com/WTFox/luna.nvim) theme, explicitly designed and optimized for dynamic integration with **Quickshell**.
 
-A minimal, near-black Neovim colorscheme with a small set of warm and cool
-accents for keywords, functions, types, and strings — dark as a night sky,
-with just enough color to read by. Non-flat floats, full plugin coverage,
-and an `accent` option to desaturate syntax colors to taste, out of the box.
+> [!NOTE]
+> 🎯 **Designed for Minflair**
+> This theme was primarily built to be used alongside my personal Quickshell environment: [**Minflair**](https://github.com/t4lentles5/minflair). However, it is fully decoupled and can easily be adapted for any other Quickshell setup or dynamic theming environment that passes `vim.g.qs_colors` to Neovim!
 
-## Install
+## ✨ Features
+
+- **Dynamic Theming via Quickshell**: The entire color palette is driven by Quickshell. It reads `vim.g.qs_colors` to instantly apply your desktop's generated background and accent colors to Neovim.
+- **Real-time Synchronization**: Fully compatible with file watchers for zero-delay live reloading. Whenever you change your wallpaper or toggle Dark Mode in Quickshell, Neovim updates instantly without needing a restart.
+- **Dark & Light Mode Support**:
+  - Automatically detects `vim.o.background`.
+  - Uses the original pastel colors for Dark Mode.
+  - Implements a brand-new, optimized dark-syntax palette for Light Mode, ensuring maximum readability on white/light backgrounds.
+- **Debloated & Pure**: Removed all redundant `extras` (Kitty, Starship, etc.) since Quickshell already handles system-wide theming. This fork is 100% focused on making Neovim look perfect.
+- **Seamless Plugin Integration**: Native overrides for Telescope, Neo-tree, Trouble, Lualine, and Nvim-Notify, ensuring that everything from float borders to popup titles respects your Quickshell accent colors.
+
+## 📦 Installation (Lazy.nvim)
 
 ```lua
 {
-  "wtfox/luna.nvim",
+  "t4lentles5/luna.nvim",
   lazy = false,
   priority = 1000,
   opts = {},
 }
+
+> [!TIP]
+> **Looking for the dynamic Quickshell integration?**
+> Since `luna.nvim` exposes the `on_colors` and `on_highlights` hooks in `opts`, you can map its palette dynamically. Check out my [Neovim configuration repository](https://github.com/t4lentles5/nvim-config) (or wherever you host it) to see the exact code used to bind this theme to Quickshell's generated variables (`vim.g.qs_colors`).
 ```
 
-Then:
+## 🛠️ Modifying the Theme
 
-```lua
-vim.cmd.colorscheme("luna")
-```
+- **Palettes**: Edit `lua/luna/palette_dark.lua` or `lua/luna/palette_light.lua` to change the base syntax colors.
+- **Highlights**: Add any overrides to the `on_highlights` block in your Neovim config.
 
-## Options
+---
 
-```lua
-require("luna").setup({
-  transparent = false,
-  accent = 1.0, -- 0-1, blends syntax accents toward grey_light; 1 = full color
-  plugins = {
-    all = true, -- enable every plugin integration unconditionally
-    auto = true, -- when plugins.all is false, autodetect via lazy.nvim
-  },
-  on_colors = function(colors) end,
-  on_highlights = function(highlights, colors) end,
-})
-```
-
-`on_colors` runs first, against the resolved palette, before any highlight
-group is built. `on_highlights` runs last, after every group (core, syntax,
-treesitter, and plugin integrations) has been generated, so it always wins.
-
-## Extras
-
-Theme files for other tools are available in [`extras/`](./extras/):
-
-- [Alacritty](./extras/alacritty)
-- [bat](./extras/bat)
-- [fzf](./extras/fzf)
-- [Ghostty](./extras/ghostty)
-- [Hunk](./extras/hunk)
-- [Herdr](./extras/herdr)
-- [k9s](./extras/k9s)
-- [Kitty](./extras/kitty)
-- [lazygit](./extras/lazygit)
-- [OpenCode](./extras/opencode)
-- [Starship](./extras/starship)
-- [WezTerm](./extras/wezterm)
-- [yazi](./extras/yazi)
-- [Zellij](./extras/zellij)
+_Forked and customized specifically for Quickshell dynamic theming._
