@@ -26,11 +26,11 @@ This is a specialized fork of the original [luna.nvim](https://github.com/WTFox/
   priority = 1000,
   opts = {},
 }
+```
 
 > [!TIP]
 > **Looking for the dynamic Quickshell integration?**
-> Since `luna.nvim` exposes the `on_colors` and `on_highlights` hooks in `opts`, you can map its palette dynamically. Check out my [Neovim configuration repository](https://github.com/t4lentles5/nvim-config) (or wherever you host it) to see the exact code used to bind this theme to Quickshell's generated variables (`vim.g.qs_colors`).
-```
+> Since `luna.nvim` exposes the `on_colors` and `on_highlights` hooks in `opts`, you can map its palette dynamically. Check out my [Neovim configuration repository](https://github.com/t4lentles5/minflair/tree/main/config/nvim) to see the exact code used to bind this theme to Quickshell's generated variables (`vim.g.qs_colors`).
 
 ## 🛠️ Modifying the Theme
 
